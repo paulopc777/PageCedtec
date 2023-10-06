@@ -13,10 +13,11 @@
     $find = new Find();
     $find->sendComand("select *  from usuario where idUsuario = 1");
     while ($user = mysqli_fetch_row($find->result)) {
-        echo "<p>" . $user[0] . "</p>";
-        echo "<p>" . $user[1] . "</p>";
-        echo "<p>" . $user[2] . "</p>";
+        for($i = 0;$i <= count($user);$i++ ){
+            echo "<p>".$user[1].
+        }
     }
     ?>
+    
 </body>
 </html>
