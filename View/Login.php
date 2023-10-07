@@ -20,7 +20,7 @@
                     <input type="text">
                 </div>
                 <div class="btn-login">
-                    <button>Login</button>
+                 <button type="submit" name="submit" id="submit">Login</button>
                 </div>
             </form>
         </div>
