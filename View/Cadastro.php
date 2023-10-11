@@ -10,6 +10,8 @@
 
 <body>
 
+      <a href="home.php">Voltar</a>
+
     <main>
 
         <div class="img-content">
