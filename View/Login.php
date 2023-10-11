@@ -9,6 +9,9 @@
 </head>
 
 <body>
+
+      <a href="home.php">Voltar</a>
+    
     <main>
         <div class="img-content">
             <img src="../Public/img/eva01.png" alt="eva01">
