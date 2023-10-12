@@ -12,6 +12,9 @@
 </head>
 
 <body>
+
+      <a href="home.php">Voltar</a>
+    
     <main>
         
         <?php
