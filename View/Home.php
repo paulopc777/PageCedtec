@@ -10,16 +10,6 @@
 </head>
 
 <body>
-<<<<<<< HEAD
-    <div class="menu">
-        <header>
-            <div class="box">
-                <a href="login.php">Login</a>
-                <a href="Cadastro.php">Cadastro</a>
-        </div>
-</header>
-</div>
-=======
     <header>
         <div class="conteiner">
 
@@ -63,7 +53,6 @@
     <main>
 
     </main>
->>>>>>> parent of 058d75e (Update Home.php)
 </body>
 <script src="../Public/js/dropdow.js"></script>
 
