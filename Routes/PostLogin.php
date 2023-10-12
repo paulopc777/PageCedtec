@@ -20,10 +20,11 @@ if (empty($_POST['email'])) {
     require('./Modules/comands.php');
     $check = new Send();
     $result = $check->veryLogin($email, $pass);
+    $result = $result[0];
 
 
     if (isset($result)) {
-        if ($result[1] === $email and $result[2] === $pass) {
+        if ($result[2] === $email and $result[3] === $pass) {
             header("Location: http://localhost:3000/Logado");
         } else {
             header("Location: http://localhost:3000/view/Login.php?erro=Insira email e senha");

@@ -9,7 +9,7 @@ class Send
     public function veryLogin($email, $pass)
     {
         $sqlcomand = $sqlcomand = "
-        SELECT nome,email,senha 
+        SELECT idUsuario,nome,email,senha 
         FROM usuario 
         WHERE email = \"$email\" AND senha = \"$pass\"
         ";

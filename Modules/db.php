@@ -19,7 +19,7 @@ class DB
     {
         $this -> Conect();
         $this -> result = $this -> dbconect-> query($this -> comand);
-        $this -> resultArray = mysqli_fetch_row($this -> result);
+        $this -> resultArray = mysqli_fetch_all($this -> result);
     }
 
     public function __construct($comand){

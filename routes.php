@@ -26,3 +26,7 @@ Route::get('/Logado', function () {
 Route::get('/home', function () {
     require_once('./View/Home.php');
 });
+
+Route::get('/teste', function () {
+    require_once('./View/session.php');
+});
