@@ -1,21 +1,29 @@
 <?php
-class Find
+class DB
 {
     private $config = ["localhost", "root", "", "db1"];
     public $dbconect = null;
     public $result = null;
-    public function Veryfi()
+    public $comand = null;
+    public $resultArray = null;
+
+    public function Conect()
     {
         try {
             $this -> dbconect = new mysqli($this -> config[0], $this -> config[1], $this -> config[2], $this -> config[3]);
-            echo "conected";
         } catch (Exception $err) {
-            echo "erro ao corregar db " . $err;
+            echo "erro ao corregar db 1.Db desligada";
         }
     }
-    function sendComand($comand)
+    public function sendComand()
     {
-        $this -> Veryfi();
-        $this -> result = $this -> dbconect->query($comand);
+        $this -> Conect();
+        $this -> result = $this -> dbconect-> query($this -> comand);
+        $this -> resultArray = mysqli_fetch_row($this -> result);
+    }
+
+    public function __construct($comand){
+        $this -> comand = $comand;
+        $this -> sendComand();
     }
 };

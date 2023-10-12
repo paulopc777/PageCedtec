@@ -5,11 +5,6 @@
 
 }
 
-@font-face {
-    font-family: Bebas Neue;
-    src: url("../fonts/BebasNeue.ttf");
-}
-
 :root {
     --h-header-global: 80px;
 }
@@ -29,6 +24,11 @@ main {
     background: #351A1F;
     display: flex;
     justify-content: space-evenly;
+}
+
+label{
+    font-family: Bebas Neue;
+    color: white;
 }
 
 .img-content {
@@ -108,3 +108,9 @@ main {
 
 }
 */
+
+.input_cpf,.input_senha,.input_email{
+    display: flex;
+    flex-direction:column ;
+    align-items: center;
+}
