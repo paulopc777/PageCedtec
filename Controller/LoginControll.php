@@ -21,7 +21,7 @@ if($email == null && $pass == null){
 }
 
 $sqlcomand = $sqlcomand = "SELECT nome,email,senha FROM usuario WHERE email = \"$email\" AND senha = \"$pass\"";
-$check = new Find(
+$check = new DB(
 	$sqlcomand
 );
 

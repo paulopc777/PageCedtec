@@ -22,3 +22,7 @@ Route::get('/Cadastro', function () {
 Route::get('/Logado', function () {
     require_once('./View/Logado.php');
 });
+
+Route::get('/home', function () {
+    require_once('./View/Home.php');
+});

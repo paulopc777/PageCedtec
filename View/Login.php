@@ -13,8 +13,6 @@
 
 <body>
 
-      <a href="home.php">Voltar</a>
-    
     <main>
         
         <?php
@@ -38,8 +36,8 @@
         <div class="form-content">
             <form method="post" action="/Login">
                 <div class="input-content">
-                    <input type="text" name="email">
-                    <input type="text" name="pass">
+                    <input type="text" name="email" placeholder="Email">
+                    <input type="password" name="pass" placeholder="Senha" >
                 </div>
                 <div class="btn-login">
                     <button type="submit" name="submit" id="submit">Login</button>

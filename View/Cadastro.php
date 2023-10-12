@@ -12,9 +12,6 @@
 </head>
 
 <body>
-
-      <a href="home.php">Voltar</a>
-
     <main>
 
         <div class="img-content">
@@ -29,25 +26,20 @@
 
                     <div class="input_email">
 
-                        <label for="email" id="email" name="">email</label>
-
-                        <input type="text" id="email" name="email" placeholder="">
+                        <input type="text" id="email" name="email" placeholder="Email">
 
                     </div>
 
                     <div class="input_senha">
 
-                        <label for="senha" id="senha" name="">senha</label>
 
-                        <input type="password" id="senha" name="senha" placeholder="">
+                        <input type="password" id="senha" name="senha" placeholder="senha">
 
                     </div>
 
                     <div class="input_cpf">
 
-                        <label for="cpf" id="cpf" name="">Cpf</label>
-
-                        <input type="text" id="cpf" name="cpf" placeholder="">
+                        <input type="text" id="cpf" name="cpf" placeholder="Cpf">
 
                     </div>
 

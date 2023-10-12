@@ -114,3 +114,22 @@ label{
     flex-direction:column ;
     align-items: center;
 }
+
+input{
+    color: rgb(31, 16, 16);
+    font-family: Bebas Neue;
+    font-size: 1.3rem;
+    transition: all .3s ease-in-out;
+    text-align: center;
+}
+input:focus::placeholder{
+    opacity: 0;
+    transition: all .1s ease-in-out;
+    
+}
+
+::placeholder{
+    color: rgb(70, 36, 36);
+    font-family: Bebas Neue;
+    font-size: 1.3rem;
+}
