@@ -11,12 +11,14 @@
     <?php
 
     require "./vendor/autoload.php";
-    use \Pecee\SimpleRouter\SimpleRouter;
+    
+    use \pecee\SimpleRouter\SimpleRouter;
+
     require_once 'routes.php';
+
     SimpleRouter::setDefaultNamespace('\Demo\Controllers');
     SimpleRouter::start();
 
-    echo "ola";
     ?>
 </body>
 </html>

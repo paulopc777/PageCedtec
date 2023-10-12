@@ -1,6 +1,5 @@
 <?php
 
-use Pecee\Http\Input\InputHandler;
 use \Pecee\SimpleRouter\SimpleRouter as Route;
 
 Route::get('/', function () {
