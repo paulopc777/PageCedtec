@@ -42,40 +42,48 @@ if(isset($_POST['submit']))
 </head>
 
 <body>
+
+<a href="home.php">Voltar</a>
+
     <main>
 
         <div class="img-content">
-            <img src="../Public/img/Megumin.webp" alt="Megumin">
-        </div>
+            <img src="" alt="">
+    </div>
 
-        <div class=" form-content">
+    <div class=" form-content">
 
-            <form action="#">
+            <form action="Cadastro.php" method="POST">
 
                 <div class="input-content">
 
                     <div class="input_email">
 
-                        <input type="text" id="email" name="email" placeholder="Email">
+                        <label for="email" id="email" name="email"></label><br>
+
+                        <input type="text" id="email" name="email" placeholder="Email"><br><br>
 
                     </div>
 
                     <div class="input_senha">
 
+                        <label for="senha" id="senha" name="senha"></label><br>
 
-                        <input type="password" id="senha" name="senha" placeholder="senha">
+                        <input type="password" id="senha" name="senha" placeholder="Senha"><br><br>
 
                     </div>
 
                     <div class="input_cpf">
 
-                        <input type="text" id="cpf" name="cpf" placeholder="Cpf">
+                        <label for="cpf" id="cpf" name="cpf"></label><br>
+
+                        <input type="text" id="cpf" name="cpf" placeholder="CPF"><br><br>
 
                     </div>
 
                     <div class="btn-cadastro">
 
-                        <button>Cadastro</button>
+                        <button type="submit" name="submit" id="submit">Cadastro</button>
 
                     </div>
 
