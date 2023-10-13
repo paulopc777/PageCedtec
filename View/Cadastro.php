@@ -1,3 +1,33 @@
+<?php
+
+if(isset($_POST['submit']))
+
+{
+    //print_r('Nome: ' . $_POST['nome']);
+    //print_r('<br>');
+    //print_r('Email: ' . $_POST['email']);
+    //print_r('<br>');
+    //print_r('Senha: ' . $_POST['senha']);
+    //print_r('<br>');
+    //print_r('CPF: ' . $_POST['cpf']);
+   // print_r('<br>');
+   // print_r('Data de nascimento: ' . $_POST['data_nasc']);
+    //print_r('<br>');
+    //print_r('Professor: ' . $_POST['professor']);
+    
+    include_once('configuracao.php');
+
+    $nome = $_POST['email'];
+    $senha = $_POST['senha'];
+    $cpf = $_POST['cpf'];
+
+    $result = mysqli_query($conexao, "INSERT INTO usuario_cadastro(email_usuario,senha_usuario,cpf_usuario) 
+    VALUES ('$nome','$senha','$cpf')");
+
+}
+
+?>  
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
