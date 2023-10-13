@@ -2,6 +2,9 @@
 $email = null;
 $pass = null;
 
+
+
+
 if (empty($_POST['email'])) {
 
     header("Location: http://localhost:3000/view/Login.php?erro=Insira email");
@@ -25,11 +28,13 @@ if (empty($_POST['email'])) {
 
     if (isset($result)) {
         if ($result[2] === $email and $result[3] === $pass) {
-            header("Location: http://localhost:3000/Logado");
+            session_start();
+            $_SESSION['id'] = $result[0];
         } else {
             header("Location: http://localhost:3000/view/Login.php?erro=Insira email e senha");
         }
     } else {
         header("Location: http://localhost:3000/view/Login.php?erro=Email e senha errados");
     }
+    header("Location: http://localhost:3000/Logado");
 }

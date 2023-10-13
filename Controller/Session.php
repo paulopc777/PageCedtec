@@ -1,15 +1,15 @@
 <?php
 
 class Sension{
-    
 
-    function __construct($id){
-        $this -> Start($id);
-        $this -> Verify();
-    }
-    function Start($idUser){
+    function Start($id){
+
         session_start();
-        $_SESSION['id'] = $idUser;
+
+        $_SESSION['id'] = $id;
+
+        return $_SESSION['id'];
+
     }
 
     function Verify(){
@@ -21,6 +21,6 @@ class Sension{
     }
 
     function Destroy(){
-
+        
     }
 }

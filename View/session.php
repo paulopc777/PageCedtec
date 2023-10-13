@@ -11,15 +11,11 @@
         require_once('../PageCedtec/Modules/comands.php');
         require_once('../PageCedtec/Controller/arrayloop.php');
 
-        $sesi = new Sension('1');
+        $sesi = new Sension();
         echo $sesi -> Verify();
 
         $db = new Send();
         $db = $db-> charCurso($_SESSION['id']);
-        
-        var_dump($db[0][1]);
-
-
         $array = new Arrayloop($db);
 
         ?>

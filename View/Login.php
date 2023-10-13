@@ -14,20 +14,25 @@
 <body>
 
     <main>
-        
+
         <?php
+
         $erroMessage = null;
-    
+        session_start();
+        
+        if(!empty($_SESSION['id'])){
+            header("Location: http://localhost:3000/Logado");
+        }
         if (isset($_GET['erro'])) {
             $erroMessage = $_GET['erro'];
         } else {
-
         }
-        
-        if($erroMessage){
+
+        if ($erroMessage) {
             $erro  = $erroMessage;
             require("./Components/boxErro.php");
         }
+        
         ?>
 
         <div class="img-content">
@@ -37,7 +42,7 @@
             <form method="post" action="/Login">
                 <div class="input-content">
                     <input type="text" name="email" placeholder="Email">
-                    <input type="password" name="pass" placeholder="Senha" >
+                    <input type="password" name="pass" placeholder="Senha">
                 </div>
                 <div class="btn-login">
                     <button type="submit" name="submit" id="submit">Login</button>

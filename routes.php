@@ -6,7 +6,6 @@ Route::get('/', function () {
     require_once('./View/Home.php');
 });
 
-
 Route::get('/Login', function () {
     require_once('./View/Login.php');
 });
@@ -29,4 +28,15 @@ Route::get('/home', function () {
 
 Route::get('/teste', function () {
     require_once('./View/session.php');
+});
+
+Route::get('/destroy', function () {
+    session_start();
+
+    if (!empty($_SESSION['id'])) {
+        unset($_SESSION['id']);
+    } else {
+        
+    }
+    Route::response() -> redirect('http://localhost:3000/Login');
 });
