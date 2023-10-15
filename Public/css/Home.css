@@ -56,9 +56,11 @@ button {
     width: 150px;
     height: 40px;
     position: relative;
+
 }
 
 .Menu-drop {
+    display: flex;
     height: 100%;
 }
 
@@ -69,7 +71,13 @@ button {
     border-radius: 25px;
 
 }
-
+.Menu-drop button  a {
+    text-decoration: none;
+    color: black;
+}
+.dflex{
+    display: flex;
+}
 .Menu-drop p {
     margin: auto 0;
     margin-right: 20px;

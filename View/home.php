@@ -44,7 +44,7 @@
                 </form>
             </div>
         </div>
-        <div class="Menu">
+        <div class="dflex">
             <?php
             session_start();
             if (isset($_SESSION['id'])) {
