@@ -45,20 +45,20 @@
             </div>
         </div>
         <div class="Menu">
-            <div class="Menu-drop">
-                <button>
-                    <p>Menu</p>
-                </button>
-            </div>
-            <div class="img-profifle">
-                <img src="" alt="" width="100%">
-            </div>
+            <?php
+            session_start();
+            if (isset($_SESSION['id'])) {
+                require('Components/ProfileMenu.php');
+            }else{
+                require('Components/Menu.php');
+            }
+            ?>
         </div>
     </header>
     <main>
         <div class="box-category">
             <?php
-            require_once('../PageCedtec/View/Components/CurseCategory.php');
+            include('Components/CurseCategory.php');
             ?>
         </div>
         <div id="carouselExample" class="carousel slide">
