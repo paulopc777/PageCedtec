@@ -133,3 +133,25 @@ input:focus::placeholder{
     font-family: Bebas Neue;
     font-size: 1.3rem;
 }
+
+.Box_erro{
+    position: absolute;
+    height: 50px;
+    width: 200px;
+    top: 50px;
+    right: 215px;
+    background: #669600;
+    padding: .5rem;
+    border-radius: 50px 50px 50px 50px ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 1s ease-in-out; 
+}
+.Box_erro p {
+    color: rgb(255, 255, 255);
+    transition: all 1s ease-in-out;
+    font-family: Bebas Neue;
+    font-size: 1.4rem;
+    text-align: center;
+}

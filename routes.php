@@ -2,23 +2,29 @@
 
 use \Pecee\SimpleRouter\SimpleRouter as Route;
 
+//Home
 Route::get('/', function () {
     require_once('./View/Home.php');
 });
 
+//Login
 Route::get('/Login', function () {
     require_once('./View/Login.php');
 });
-
 Route::post('/Login', function () {
-    require_once('./Routes/Postlogin.php');
+    require_once('./Controller/Postlogin.php');
 });
 
+//Cadastro
 Route::get('/Cadastro', function () {
     require_once('./View/Cadastro.php');
 });
+Route::post('/Cadastro', function ( ) {
+    require_once("./Controller/PostCadastro.php");
+});
 
-Route::get('/Logado', function () {
+//Pagina de Logado
+Route::get('/Logado/{id}', function ($id) {
     require_once('./View/Logado.php');
 });
 
@@ -35,6 +41,7 @@ Route::get('/destroy', function () {
 
     if (!empty($_SESSION['id'])) {
         unset($_SESSION['id']);
+        $_SESSION = array();
     } else {
         
     }

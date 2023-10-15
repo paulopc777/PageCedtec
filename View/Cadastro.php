@@ -1,33 +1,3 @@
-<?php
-
-if(isset($_POST['submit']))
-
-{
-    //print_r('Nome: ' . $_POST['nome']);
-    //print_r('<br>');
-    //print_r('Email: ' . $_POST['email']);
-    //print_r('<br>');
-    //print_r('Senha: ' . $_POST['senha']);
-    //print_r('<br>');
-    //print_r('CPF: ' . $_POST['cpf']);
-   // print_r('<br>');
-   // print_r('Data de nascimento: ' . $_POST['data_nasc']);
-    //print_r('<br>');
-    //print_r('Professor: ' . $_POST['professor']);
-    
-    include_once('configuracao.php');
-
-    $nome = $_POST['email'];
-    $senha = $_POST['senha'];
-    $cpf = $_POST['cpf'];
-
-    $result = mysqli_query($conexao, "INSERT INTO usuario_cadastro(email_usuario,senha_usuario,cpf_usuario) 
-    VALUES ('$nome','$senha','$cpf')");
-
-}
-
-?>  
-
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -42,42 +12,53 @@ if(isset($_POST['submit']))
 </head>
 
 <body>
+    <?php
 
-<a href="home.php">Voltar</a>
+    $erroMessage = null;
+    session_start();
+
+    if (!empty($_SESSION['id'])) {
+        header("Location: http://localhost:3000/Logado");
+    }
+    if (isset($_GET['erro'])) {
+        $erroMessage = $_GET['erro'];
+    } else {
+    }
+
+    if ($erroMessage) {
+        $erro  = $erroMessage;
+        require_once("../View/Components/boxErro.php");
+    }
+
+    ?>
 
     <main>
 
         <div class="img-content">
-            <img src="" alt="">
-    </div>
+            <img src="../Public/img/Megumin.webp" alt="">
+        </div>
 
-    <div class=" form-content">
+        <div class=" form-content">
 
-            <form action="Cadastro.php" method="POST">
+            <form action="/Cadastro" method="POST">
 
                 <div class="input-content">
 
                     <div class="input_email">
 
-                        <label for="email" id="email" name="email"></label><br>
-
-                        <input type="text" id="email" name="email" placeholder="Email"><br><br>
+                        <input type="email" id="email" name="email" placeholder="Email" required><br><br>
 
                     </div>
 
                     <div class="input_senha">
 
-                        <label for="senha" id="senha" name="senha"></label><br>
-
-                        <input type="password" id="senha" name="senha" placeholder="Senha"><br><br>
+                        <input type="password" id="senha" name="senha" placeholder="Senha" required><br><br>
 
                     </div>
 
                     <div class="input_cpf">
 
-                        <label for="cpf" id="cpf" name="cpf"></label><br>
-
-                        <input type="text" id="cpf" name="cpf" placeholder="CPF"><br><br>
+                        <input type="text" id="cpf" name="cpf" placeholder="CPF" required><br><br>
 
                     </div>
 

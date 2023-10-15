@@ -4,36 +4,51 @@ require_once ("./Modules/db.php");
 
 class Send
 {
-
+    public $result  = null;
 
     public function veryLogin($email, $pass)
     {
-        $sqlcomand = $sqlcomand = "
-        SELECT idUsuario,nome,email,senha 
-        FROM usuario 
-        WHERE email = \"$email\" AND senha = \"$pass\"
-        ";
-        $check = new DB(
+        $sqlcomand = "
+        SELECT idUsuario,NomeUsuario,EmailUsuario,SenhaUsuario
+        FROM usuarios 
+        WHERE EmailUsuario = \"$email\" AND SenhaUsuario = \"$pass\"";
+
+        $db = new DB(
             $sqlcomand
-        );
-        return $check->resultArray;
+        ) or die ('erro');
+        
+        return $db->resultArray;
     }
     public function charCurso($idUser)
     {
-        $sqlcomand = $sqlcomand = "
-        SELECT nome,Titulo,descricao,categoria FROM usuario 
+        $sqlcomand = "
+        SELECT nomeCurso,TituloCurso,descricaoCurso,categoriaCurso FROM usuario 
         JOIN cusospalestradors ON cusospalestradors.idPorfessor = usuario.idUsuario 
         join curso on curso.id = idCuros 
         where idUsuario = \"$idUser\";
         ";
-        $check = new DB(
+        $db = new DB(
             $sqlcomand
-        );
-        if(array_key_exists(0,$check->resultArray)){
-            return $check->resultArray;
+        ) or die ('err charCurso');
+
+        if(array_key_exists(0,$db->resultArray)){
+            return $db->resultArray;
         }else{
             return "erro";
         }
+    }
+    public  function InsertUser($email,$pass,$cpf){
+        $sqlcomand = "
+        INSERT  INTO  usuarios (EmailUsuario,SenhaUsuario,CpfUsuario)
+        Value(
+            \"$email\",
+            \"$pass\",
+            \"$cpf\"
+        );
+        ";
+        $db = new DB($sqlcomand) or die ('erro send db Inset');
+
+        return  $db -> resultArray;
     }
 
 }

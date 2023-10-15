@@ -41,8 +41,8 @@
         <div class="form-content">
             <form method="post" action="/Login">
                 <div class="input-content">
-                    <input type="text" name="email" placeholder="Email">
-                    <input type="password" name="pass" placeholder="Senha">
+                    <input type="email" name="email" placeholder="Email" require>
+                    <input type="password" name="pass" placeholder="Senha" require>
                 </div>
                 <div class="btn-login">
                     <button type="submit" name="submit" id="submit">Login</button>
