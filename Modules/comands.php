@@ -37,16 +37,17 @@ class Send
     public function charCurso($idUser)
     {
         $sqlcomand = "
-        SELECT nomeCurso,TituloCurso,descricaoCurso,categoriaCurso FROM usuario
-        JOIN cusospalestradors ON cusospalestradors.idPorfessor = usuario.idUsuario
-        join curso on curso.id = idCuros
-        where idUsuario = \"$idUser\";
-        ";
+        SELECT nomeCurso,descricaoCurso FROM usuarios 
+        join matricula on matricula.Usuarios_idUsuarios = idUsuarios 
+        join cursos on matricula.Cursos_idCursos =idCursos 
+        where idUsuarios = \"$idUser\"";
         $db = new DB(
             $sqlcomand
         ) or die('err charCurso');
 
         if (array_key_exists(0, $db->resultArray)) {
+            $seult = $db -> resultArray;
+            $this -> result = $seult;
             return $db->resultArray;
         } else {
             return 'erro';
@@ -56,7 +57,7 @@ class Send
     /**
      * Inseri dados no banco
      */
-    public  function InsertUser( $name , $email, $pass)
+    public  function InsertUser($name, $email, $pass)
     {
         $sqlcomand = "
         INSERT  INTO  usuarios (nomeUsuario,emailUsuario,senhaUsuario)

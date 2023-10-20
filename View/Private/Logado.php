@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php
+
 if ($_SERVER["REQUEST_URI"] == '/View/Private/Logado.php') {
     require_once('../../Controller/SessionControll/Session.php');
 } else {
@@ -12,9 +13,7 @@ if ($result === null) {
     header("Location: http://localhost:3000/Login");
     exit('');
 }
-echo "<hr>";
-var_dump($_SESSION);
-echo ($_SESSION['id']);
+
 ?>
 
 <head>
@@ -23,6 +22,9 @@ echo ($_SESSION['id']);
     <title>Página de usuário logado</title>
     <link rel="stylesheet" href="/Public/css/Logado.css">
     <link rel="stylesheet" href="/Public/css/tolltip.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -57,9 +59,38 @@ echo ($_SESSION['id']);
                 </div>
             </div>
         </div>
-
         <div class="fundo-curso">
-            <div class="curso-1"></div>
+            <div class="text-conteiner">
+                <p>Meus Cursos</p>
+            </div>
+            <div class="curso-1" style="    background: #11162F;">
+                <div class="Curso-img">
+                    <a href="">
+                        <img src="/Public/img/img-curso-small/Python.png" alt="Python">
+                    </a>
+                </div>
+                <div class="Curso-text">
+                    <ul>
+                        <li>Modulo 1</li>
+                        <li>Modulo 2 </li>
+                        <li>Modulo 3</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="curso-1" style="background: #900c10;">
+                <div class="Curso-img">
+                    <a href="">
+                        <img src="/Public/img/img-curso-small/Java.jpg" alt="Java">
+                    </a>
+                </div>
+                <div class="Curso-text">
+                    <ul>
+                        <li>Modulo 1</li>
+                        <li>Modulo 2 </li>
+                        <li>Modulo 3</li>
+                    </ul>
+                </div>
+            </div>
             <div class="curso-2"></div>
             <div class="curso-3"></div>
         </div>
