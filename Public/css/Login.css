@@ -29,7 +29,7 @@ main {
 .img-content {
     display: flex;
     align-items: center;
-    justify-self:center;
+    justify-self: center;
     height: 100%;
 }
 
@@ -86,18 +86,19 @@ main {
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-    transition: all 1s ease-in-out; 
+    transition: all 1s ease-in-out;
 }
 
-.btn-login button:hover{
+.btn-login button:hover {
     background: #c5ec71;
     color: #d3688c;
 }
+
 ::placeholder {
-    text-align: center; 
+    text-align: center;
 }
 
-.Box_erro{
+.Box_erro {
     position: absolute;
     height: 50px;
     width: 200px;
@@ -105,12 +106,13 @@ main {
     right: 100px;
     background: #669600;
     padding: .5rem;
-    border-radius: 50px 50px 50px 50px ;
+    border-radius: 50px 50px 50px 50px;
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: all 1s ease-in-out; 
+    transition: all 1s ease-in-out;
 }
+
 .Box_erro p {
     color: rgb(255, 255, 255);
     transition: all 1s ease-in-out;
@@ -118,19 +120,21 @@ main {
     font-size: 1.4rem;
     text-align: center;
 }
-input{
+
+input {
     color: rgb(31, 16, 16);
     font-family: Bebas Neue;
     font-size: 1.3rem;
     transition: all .3s ease-in-out;
 }
-input:focus::placeholder{
+
+input:focus::placeholder {
     opacity: 0;
     transition: all .1s ease-in-out;
-    
+
 }
 
-::placeholder{
+::placeholder {
     color: rgb(70, 36, 36);
     font-family: Bebas Neue;
     font-size: 1.3rem;
