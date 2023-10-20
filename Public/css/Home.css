@@ -71,13 +71,16 @@ button {
     border-radius: 25px;
 
 }
-.Menu-drop button  a {
+
+.Menu-drop button a {
     text-decoration: none;
     color: black;
 }
-.dflex{
+
+.dflex {
     display: flex;
 }
+
 .Menu-drop p {
     margin: auto 0;
     margin-right: 20px;
@@ -94,32 +97,37 @@ button {
     top: 0;
 }
 
-.btn{
-    border-radius: 25px!important;
-    background-color :white !important;
-    color:black !important;
+.btn {
+    border-radius: 25px !important;
+    background-color: white !important;
+    color: black !important;
 }
+
 .dropdown {
     height: 40px;
     width: 150px;
     position: relative;
     border: none;
 }
-.btn-secondary{
+
+.btn-secondary {
     width: 100%;
     height: 40px;
     border-radius: 25%;
 }
 
-ul{
+ul {
     background-color: white !important;
 }
-li{
+
+li {
     text-align: center;
 }
-li:hover{
+
+li:hover {
     background-color: rgb(94, 101, 107) !important;
 }
+
 .dropdown-item {
     margin-bottom: .3rem;
     color: black !important;
@@ -158,7 +166,7 @@ main {
 
 }
 
-img{
+img {
     min-height: 400px;
     max-height: 400px;
     object-fit: cover;

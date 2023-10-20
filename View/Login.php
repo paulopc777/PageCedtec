@@ -17,22 +17,16 @@
 
         <?php
 
-        $erroMessage = null;
         session_start();
-        
+
         if(!empty($_SESSION['id'])){
-            header("Location: http://localhost:3000/Logado");
+            header("Location: http://localhost:3000/Logado/".session_id());
         }
-        if (isset($_GET['erro'])) {
-            $erroMessage = $_GET['erro'];
-        } else {
+        if (!empty($erro)) {
+            $err  = $erro;
+            require("Components/boxErro.php");
         }
 
-        if ($erroMessage) {
-            $erro  = $erroMessage;
-            require("./Components/boxErro.php");
-        }
-        
         ?>
 
         <div class="img-content">

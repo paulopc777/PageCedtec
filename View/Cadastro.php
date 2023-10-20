@@ -14,20 +14,15 @@
 <body>
     <?php
 
-    $erroMessage = null;
     session_start();
 
     if (!empty($_SESSION['id'])) {
         header("Location: http://localhost:3000/Logado");
     }
-    if (isset($_GET['erro'])) {
-        $erroMessage = $_GET['erro'];
-    } else {
-    }
 
-    if ($erroMessage) {
-        $erro  = $erroMessage;
-        require_once("../View/Components/boxErro.php");
+    if (!empty($err)) {
+        $err  = $erro;
+        require_once("Components/boxErro.php");
     }
 
     ?>
@@ -58,7 +53,7 @@
 
                     <div class="input_cpf">
 
-                        <input type="text" id="cpf" name="cpf" placeholder="CPF" required><br><br>
+                        <input type="text" id="name" name="name" placeholder="name" required><br><br>
 
                     </div>
 

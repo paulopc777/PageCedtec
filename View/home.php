@@ -49,7 +49,7 @@
             session_start();
             if (isset($_SESSION['id'])) {
                 require('Components/ProfileMenu.php');
-            }else{
+            } else {
                 require('Components/Menu.php');
             }
             ?>
@@ -64,10 +64,10 @@
         <div id="carouselExample" class="carousel slide">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="../Public/img/foto1.png" class="d-block w-100" alt="...">
+                    <img src="../Public/img/foto1.webp" class="d-block w-100" alt="...">
                 </div>
                 <div class="carousel-item">
-                    <img src="../Public/img/fotn2.png" class="d-block w-100" alt="...">
+                    <img src="../Public/img/foto2.webp" class="d-block w-100" alt="...">
                 </div>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">

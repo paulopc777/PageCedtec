@@ -1,11 +1,13 @@
 # PageCedtec
 
-## Pagina de Cursode anailze e desenvolvimento de sistemas da cedtec 
+## Pagina de Cursode anailze e desenvolvimento de sistemas da cedtec
 
-
-  session_start();
-    if($_SESSION["newsession"] === "Loged"){
-    }else{
-        $_SESSION["newsession"] = "notLoged";
-    }
-    echo $_SESSION["newsession"];
+    - [x] Sistema de Login
+    - [x] Sistema de Castro
+    - [x] Sessoes
+    - [x] Paginas Restritas
+    - [ ] Middleware
+    - [ ] Pagina de dashboard
+    - [ ] Pagina de Curso
+    - [ ] Login do Admin
+    - [ ] Pagina Admin
