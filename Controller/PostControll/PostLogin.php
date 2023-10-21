@@ -27,6 +27,7 @@ if (empty($_POST['email'])) {
         if (strtolower($result[2])  == strtolower($email) && strtolower($result[3]) === strtolower($pass)) {
             session_start();
             $_SESSION['id'] = $result[0];
+            $_SESSION['nome'] = $result[1];
             header("Location: http://localhost:3000/Logado/" . session_id());
         } else {
             header("Location: http://localhost:3000/Login/Email_senha_errados");

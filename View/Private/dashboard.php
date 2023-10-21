@@ -21,31 +21,38 @@ if (!empty($_SESSION['id'])) {
     require_once('Modules/comands.php');
     require_once('Controller/arrayloop.php');
     require_once('Modules/db.php');
+    //
+    // $send = new Send();
+    // $result = $send->charCurso(1);
+    //  $ex = $send->result;
+    //var_dump($ex);
 
-    $send = new Send();
-    $result = $send->charCurso(1);
-    $ex = $send->result;
-    var_dump($ex);
 
-    for ($i = 0; $i < $ex; $i++) {
-        $ress = $ex[$i];
-        echo "
-        <div class='curso-1' style='background: #11162F;'>
-                    <div class='Curso-img'>
-                        <a href=''>
-                            <img src='/Public/img/img-curso-small/" . $img . "' alt='" . $categoria . "'>
-                        </a>
-                    </div>
-                    <div class='Curso-text'>
-                        <ul>
-                            <li>" . $Modulo . "</li>
-                            <li>" . $Modulo . "</li>
-                            <li>" . $Modulo . "</li>
-                        </ul>
-                    </div>
-                </div>
-            ";
-    }
+    $db = new DB("
+  
+    SELECT imgs.nameImg ,nomeCurso,group_concat(modulos.nomeModulo)'nomeModulo' FROM usuarios 
+    join matricula on matricula.Usuarios_idUsuarios = idUsuarios 
+    join cursos on matricula.Cursos_idCursos =idCursos
+    join modulos on modulos.Cursos_idCursos = idCursos
+    join img_de on img_de.Cursos_idCursos = idCursos
+    join imgs on imgs.idImgs = img_de.Imgs_idImgs
+    where idUsuarios = 1
+    GROUP BY nameImg
+    ORDER BY idModulos  
+;
+    ");
+
+    //$data = mysqli_fetch_assoc($db-> result);
+    //var_dump($data);
+    echo '<br><hr>';
+    var_dump($db->resultArray);
+
+    $result = $db->resultArray;
+
+    echo count($result);
+    
+    new Arrayloop(1, $result);
+
     ?>
 </body>
 

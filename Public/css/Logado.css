@@ -105,7 +105,6 @@ main {
     margin-bottom: 1rem;
 }
 
-
 .Curso-img img {
     width: 125px;
     height: 125px;
@@ -117,12 +116,19 @@ main {
 .Curso-text {
     width: 100%;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
+.curso-1 ul {
+    list-style: none;
+}
+
 .curso-1 ul li {
     color: white;
+    font-family: Bebas Neue;
+    text-align: center;
 }
 
 .text-conteiner {
@@ -141,4 +147,23 @@ main {
 .text-conteiner p {
     font-family: Bebas Neue;
     font-size: 2rem;
+}
+
+input {
+    color: rgb(31, 16, 16);
+    font-family: Bebas Neue;
+    font-size: 1.3rem;
+    transition: all .3s ease-in-out;
+}
+
+input:focus::placeholder {
+    opacity: 0;
+    transition: all .1s ease-in-out;
+
+}
+
+::placeholder {
+    color: rgb(70, 36, 36);
+    font-family: Bebas Neue;
+    font-size: 1.3rem;
 }

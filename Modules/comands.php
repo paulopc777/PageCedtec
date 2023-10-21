@@ -37,20 +37,40 @@ class Send
     public function charCurso($idUser)
     {
         $sqlcomand = "
-        SELECT nomeCurso,descricaoCurso FROM usuarios 
+        SELECT imgs.nameImg ,nomeCurso,group_concat(modulos.nomeModulo)'nomeModulo' FROM usuarios 
         join matricula on matricula.Usuarios_idUsuarios = idUsuarios 
-        join cursos on matricula.Cursos_idCursos =idCursos 
-        where idUsuarios = \"$idUser\"";
+        join cursos on matricula.Cursos_idCursos =idCursos
+        join modulos on modulos.Cursos_idCursos = idCursos
+        join img_de on img_de.Cursos_idCursos = idCursos
+        join imgs on imgs.idImgs = img_de.Imgs_idImgs
+        where idUsuarios = \" $idUser \"
+        GROUP BY nameImg
+        ORDER BY idModulos  
+    ;";
         $db = new DB(
             $sqlcomand
         ) or die('err charCurso');
 
         if (array_key_exists(0, $db->resultArray)) {
-            $seult = $db -> resultArray;
-            $this -> result = $seult;
+            //$seult = $db -> resultArray;
+           // $this -> result = $seult;
             return $db->resultArray;
         } else {
             return 'erro';
+        }
+    }
+
+    public function veryfiCurse($idUser){
+        $sqlcomand = "
+        SELECT * FROM db3.matricula 
+        join usuarios on matricula.Usuarios_idUsuarios = idUsuarios 
+        where idUsuarios = \"$idUser\";";
+        $db = new DB($sqlcomand) or die('err');
+
+        if (array_key_exists(0, $db->resultArray)) {
+            return true;
+        } else {
+            return false;
         }
     }
 
@@ -71,4 +91,16 @@ class Send
 
         return  $db->resultArray;
     }
+
+    public function UpdateName($UserId,$NewName){
+
+        $sqlcomand = "
+        UPDATE usuarios SET nomeUsuario = \"$NewName\"
+        WHERE usuarios.idUsuarios =".$UserId."
+        ;";
+        var_dump($sqlcomand);
+        $db = new DB($sqlcomand) or die ('erro');
+
+        return $db->result;
+    }   
 }

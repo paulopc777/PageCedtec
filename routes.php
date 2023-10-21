@@ -57,6 +57,19 @@ Route::get('/Logado/{id}', function ($id) {
         header("Location: http://localhost:3000/Login");
     }
 });
+
+Route::post('/Logado', function (){
+    session_start();
+    if ($_SESSION['id']) {
+        require_once('Modules/comands.php');
+        $new = new Send();
+        $new -> UpdateName($_SESSION['id'],$_POST['name']);
+        $_SESSION['nome'] = $_POST['name'];
+        header("Location: http://localhost:3000/Logado");
+        }
+});
+
+
 // Finalização de sessao 
 Route::get('/destroy', function () {
     session_start();
