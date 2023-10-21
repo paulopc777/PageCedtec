@@ -1,5 +1,12 @@
 <?php
+/**
+ * Meto do simples para verificar as informções e gravalas no banco de dados 
+ * pela função InsertUser no Model de comando
+ */
+
 include_once('../PageCedtec/Modules/comands.php');
+
+
 
 
 if (!empty($_POST['email']) && !empty($_POST['senha']) && !empty($_POST['name'])) {

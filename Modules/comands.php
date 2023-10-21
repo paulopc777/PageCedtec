@@ -53,14 +53,20 @@ class Send
 
         if (array_key_exists(0, $db->resultArray)) {
             //$seult = $db -> resultArray;
-           // $this -> result = $seult;
+            // $this -> result = $seult;
             return $db->resultArray;
         } else {
             return 'erro';
         }
     }
 
-    public function veryfiCurse($idUser){
+    /**
+     * Verifica se o usuario tem matriculas abertas 
+     * @param int $idUser Id do usuario a ser consultado
+     * @return bool so retorna true e false
+     */
+    public function veryfiCurse($idUser)
+    {
         $sqlcomand = "
         SELECT * FROM db3.matricula 
         join usuarios on matricula.Usuarios_idUsuarios = idUsuarios 
@@ -92,15 +98,74 @@ class Send
         return  $db->resultArray;
     }
 
-    public function UpdateName($UserId,$NewName){
+    /**
+     * Faz o Update somente do nome de Usuario
+     * @param int $UserId Id de Usuario que sera modificado
+     * @param string $NewName Novo nome de Usuario
+     */
+    public function UpdateName($UserId, $NewName)
+    {
 
         $sqlcomand = "
         UPDATE usuarios SET nomeUsuario = \"$NewName\"
-        WHERE usuarios.idUsuarios =".$UserId."
+        WHERE usuarios.idUsuarios =" . $UserId . "
         ;";
         var_dump($sqlcomand);
-        $db = new DB($sqlcomand) or die ('erro');
+        $db = new DB($sqlcomand) or die('erro');
 
         return $db->result;
-    }   
+    }
+
+    public function addImg($chose, $IdUser, $nameImg)
+    {
+        $sqlcomand = "
+        insert into imgs(nameImg)
+        value(\"$nameImg\");";
+
+        $db = new DB($sqlcomand) or die("Erro send Img");
+
+        $idImg = $this->charImg($nameImg);
+        $this->ralationImg($chose,$IdUser, $idImg);
+        return 'ok img';
+    }
+
+    public function charImg($nameImg)
+    {
+        $sqlcomand = "
+        SELECT idImgs FROM db3.imgs  where nameImg = \"$nameImg\";";
+        $db = new DB($sqlcomand) or die("Erro find img");
+        return $db->resultArray[0][0];
+    }
+
+    public function ralationImg($chose, $IdUser, $IdImg)
+    {
+        switch ($chose) {
+            case "user":
+                $sqlcomand = "
+            insert into img_de(Usuarios_idUsuarios,Imgs_idImgs)
+            value(".$IdUser.",".$IdImg.");";
+            $db = new DB($sqlcomand) or die("Erro to send Relation img");
+            break;
+        }
+    }
+
+    public function charImgUser($idUser){
+        $sqlcomand = "  
+        SELECT imgs.idImgs,nameImg FROM img_de 
+        join imgs on imgs.idImgs = img_de.Imgs_idImgs 
+        join usuarios on usuarios.idUsuarios = img_de.Usuarios_idUsuarios 
+        where idUsuarios = ".$idUser.";
+        ";
+        $db = new DB($sqlcomand) or die("Erro renderizar img");
+        return $db->resultArray;
+    }
+
+    public function updateImgUser($idImg,$nameImg){
+        $sqlcomand = "UPDATE imgs 
+        SET nameImg = \"$nameImg\"
+        WHERE imgs.idImgs =".$idImg." ; ";
+
+        $db = new DB($sqlcomand) or die("Erro Update Img");
+
+    }
 }

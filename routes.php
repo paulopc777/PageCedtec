@@ -59,14 +59,7 @@ Route::get('/Logado/{id}', function ($id) {
 });
 
 Route::post('/Logado', function (){
-    session_start();
-    if ($_SESSION['id']) {
-        require_once('Modules/comands.php');
-        $new = new Send();
-        $new -> UpdateName($_SESSION['id'],$_POST['name']);
-        $_SESSION['nome'] = $_POST['name'];
-        header("Location: http://localhost:3000/Logado");
-        }
+    require_once('Controller/PostControll/PostLogado.php');
 });
 
 

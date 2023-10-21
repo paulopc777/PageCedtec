@@ -1,4 +1,5 @@
 <?php
+
 class DB
 {
     private $config = ["localhost", "root", "", "db3"];
@@ -53,8 +54,8 @@ class DB
 
     /**
      * Construtor Principal que recebe o comando e conecta a db e envia.
-     * OBS,Tambem fexa a conecxao
-     * @comand deve estar formatado para SQL
+     * OBS,Tambem fecha a coneção.
+     * @param string deve estar formatado para SQL
      */
     public function __construct($comand)
     {
