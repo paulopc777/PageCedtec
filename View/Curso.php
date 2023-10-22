@@ -1,15 +1,17 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>Document</title>
     <link rel="stylesheet" href="../Public/css/Home.css">
+    <link rel="stylesheet" href="../Public/css/Curso.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
 </head>
 
 <body>
@@ -56,35 +58,24 @@
         </div>
     </header>
     <main>
-        <div class="box-category">
+        <div class="img-curso">
             <?php
-            include('Components/CurseCategory.php');
+                require_once('View/CursoComp/img.php');
             ?>
         </div>
-        <div id="carouselExample" class="carousel slide">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="../Public/img/foto1.webp" class="d-block w-100" alt="...">
-                </div>
-                <div class="carousel-item">
-                    <img src="../Public/img/foto2.webp" class="d-block w-100" alt="...">
+        <div class="Apresentacao">
+            <div class="Conteudo">
+                <?php
+                require_once('View/CursoComp/TituloDescr.php');
+                ?>
+                <button>Increvase</button>
+            </div>
+            <div class="Professor">
+                <h2>Professores do Curos</h2>
+                <div class="box-Professor">
+
                 </div>
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
-        </div>
-        <div>
-            <a href="/Curso/Curso_de_Python">Curso_de_Python</a>
-            <a href="/Curso/Curso_de_JavaScript">Curso_de_JavaScript</a>
-            <a href="/Curso/Curso_de_Java">Curso_de_Java</a>
-            <a href="/Curso/Curso_de_SQL">Curso_de_SQL</a>
-            <a href="/Curso/Curso_de_Python"></a>
         </div>
     </main>
 </body>

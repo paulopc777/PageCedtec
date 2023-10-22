@@ -25,6 +25,18 @@ if ($result === null) {
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #fff;
+            color: #000;
+        }
+
+        /* Estilos para o modo escuro */
+        body.dark-mode {
+            background-color: #333;
+            color: #fff!important;
+        }
+    </style>
 </head>
 
 <body>
@@ -76,7 +88,6 @@ if ($result === null) {
             </div>
             <?php
             //require('Modules/comands.php');
-
             $check = new Send();
             $result = $check->veryfiCurse($_SESSION['id']);
             if ($result == true) {
@@ -86,6 +97,7 @@ if ($result === null) {
             }
             ?>
         </div>
+
     </main>
 </body>
 <script type="text/javascript">
@@ -108,5 +120,6 @@ if ($result === null) {
         }
     }
 </script>
+
 
 </html>

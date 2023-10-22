@@ -23,7 +23,7 @@ Route::get('/Login/{err}', function ($err) {
 });
 
 Route::post('/Login', function () {
-    require_once('./Controller/PostControll/Postlogin.php');
+    require_once('./Controller/PostControll/PostLogin.php');
 });
 
 //Cadastro
@@ -62,6 +62,19 @@ Route::post('/Logado', function (){
     require_once('Controller/PostControll/PostLogado.php');
 });
 
+
+//Curso
+
+Route::get('/Curso', function () {
+    require_once('View/Curso.php');
+});
+Route::get('/Cursos', function () {
+    require_once('View/Curso.php');
+});
+
+Route::get('/Curso/{Curse}', function ($curse) {
+    require_once('View/Curso.php');
+});
 
 // Finalização de sessao 
 Route::get('/destroy', function () {

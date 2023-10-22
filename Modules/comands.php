@@ -116,6 +116,18 @@ class Send
         return $db->result;
     }
 
+    public function findCurso($nomeCurso){
+        $sqlcomand = "
+        SELECT nomeCurso,descricaoCurso,Name,group_concat(nomeModulo),group_concat(descricaoModulo),
+        time_format(sum(duracaoModulo),'%H %i %s') 
+        FROM cursos 
+        join cutegorias on cursos.Cutegorias_idCutegorias = cutegorias.idCutegorias 
+        join modulos on modulos.Cursos_idCursos = cursos.idCursos where nomeCurso = \"$nomeCurso\";
+        ";
+        $db = new DB($sqlcomand) or die("Erro send findCurso");
+        return $db->resultArray;
+    }
+
     public function addImg($chose, $IdUser, $nameImg)
     {
         $sqlcomand = "

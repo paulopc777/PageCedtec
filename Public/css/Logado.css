@@ -115,8 +115,29 @@ form {
 }
 
 .fundo-curso {
-    overflow: auto;
+    overflow: visible;
+    overflow-x: hidden;
     height: 550px;
+}
+
+.fundo-curso::-webkit-scrollbar {
+    width: 6px;
+    /* width of the entire scrollbar */
+}
+
+.fundo-curso::-webkit-scrollbar-track {
+    background: rgb(255, 255, 255);
+    border-radius: 10px;
+    /* color of the tracking area */
+}
+
+.fundo-curso::-webkit-scrollbar-thumb {
+    background-color: rgb(248, 28, 12);
+    /* color of the scroll thumb */
+    border-radius: 10px;
+    /* roundness of the scroll thumb */
+    border: 2px solid rgb(248, 28, 12);
+    /* creates padding around scroll thumb */
 }
 
 .curso-1 {

@@ -8,5 +8,5 @@
     if(isset($result[0])){
         echo "<img id='img-c' src='/uploads/".$result[0][1]."' alt='Foto Perfil' width='130px' height='130px'>";
     }else{
-
+        
     }

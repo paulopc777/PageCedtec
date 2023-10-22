@@ -79,6 +79,13 @@
                 <span class="visually-hidden">Next</span>
             </button>
         </div>
+        <div>
+            <a href="/Curso/Curso_de_Python">Curso_de_Python</a>
+            <a href="/Curso/Curso_de_JavaScript">Curso_de_JavaScript</a>
+            <a href="/Curso/Curso_de_Java">Curso_de_Java</a>
+            <a href="/Curso/Curso_de_SQL">Curso_de_SQL</a>
+            <a href="/Curso/Curso_de_Python"></a>
+        </div>
     </main>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>

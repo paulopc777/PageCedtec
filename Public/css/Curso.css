@@ -1,0 +1,55 @@
+
+
+main{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 4rem;
+}
+
+.Conteudo {
+    width: 300px;
+    height: 260px;
+    flex-shrink: 0;
+    border-radius: 50px;
+    background: #B4E39E;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.Flex {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.Conteudo button {
+    width: 80%;
+    height: 40px;
+    flex-shrink: 0;
+    border-radius: 50px;
+    background: #01AE46;
+}
+
+.Titulo {
+    width: 80%;
+    height: 40px;
+    flex-shrink: 0;
+    border-radius: 50px;
+    background: #63855E;
+}
+
+.descricao {
+    width: 80%;
+    height: 110px;
+    flex-shrink: 0;
+    border-radius: 27px;
+    background: #7BA16E;
+}
+
+.img img {
+    border-radius: 50px;
+    max-width: 450px;
+}
