@@ -70,12 +70,9 @@
                 ?>
                 <button>Increvase</button>
             </div>
-            <div class="Professor">
-                <h2>Professores do Curos</h2>
-                <div class="box-Professor">
-
-                </div>
-            </div>
+            <?php
+            require_once('View/CursoComp/professores.php');
+            ?>
         </div>
     </main>
 </body>

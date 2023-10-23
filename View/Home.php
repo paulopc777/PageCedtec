@@ -79,12 +79,10 @@
                 <span class="visually-hidden">Next</span>
             </button>
         </div>
-        <div>
-            <a href="/Curso/Curso_de_Python">Curso_de_Python</a>
-            <a href="/Curso/Curso_de_JavaScript">Curso_de_JavaScript</a>
-            <a href="/Curso/Curso_de_Java">Curso_de_Java</a>
-            <a href="/Curso/Curso_de_SQL">Curso_de_SQL</a>
-            <a href="/Curso/Curso_de_Python"></a>
+        <div class="flex_card" style="margin-top: 2rem; margin-bottom: 5rem;">
+            <?php
+                require_once(__DIR__.'/Components/cards.php')
+            ?>
         </div>
     </main>
 </body>

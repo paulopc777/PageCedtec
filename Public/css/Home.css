@@ -170,3 +170,11 @@ main {
 
 }
 
+.carousel-item img{
+    max-height: 269px;
+    object-fit: cover;
+}
+.flex_card{
+    display: flex;
+    justify-content: space-between;
+}

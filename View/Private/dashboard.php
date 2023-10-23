@@ -1,7 +1,7 @@
 <?php
 
 if (!empty($_SESSION['id'])) {
-    header("Location: http://localhost:3000/Login");
+    header("Location: http://localhost:80/Login");
 } else {
 }
 

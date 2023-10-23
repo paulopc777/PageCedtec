@@ -17,7 +17,7 @@
     session_start();
 
     if (!empty($_SESSION['id'])) {
-        header("Location: http://localhost:3000/Logado");
+        header("Location: http://localhost:80/Logado");
     }
 
     if (!empty($err)) {

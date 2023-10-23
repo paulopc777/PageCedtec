@@ -115,7 +115,11 @@ class Send
 
         return $db->result;
     }
-
+    /**
+     * Ache o Curo pelo nome do mesmo 
+     * @param string $nomeCurso Nome do Curso a pesquisar
+     * @return array array de dados do curso
+     */
     public function findCurso($nomeCurso){
         $sqlcomand = "
         SELECT nomeCurso,descricaoCurso,Name,group_concat(nomeModulo),group_concat(descricaoModulo),
@@ -125,6 +129,23 @@ class Send
         join modulos on modulos.Cursos_idCursos = cursos.idCursos where nomeCurso = \"$nomeCurso\";
         ";
         $db = new DB($sqlcomand) or die("Erro send findCurso");
+        return $db->resultArray;
+    }
+    /**
+     * Lsita 4 cursos no banco de dados
+     * 
+     */
+    public function ListCurse(){
+        $sqlcomand ="
+        SELECT nomeCurso,descricaoCurso,imgs.nameImg  FROM cursos 
+        join cutegorias on cursos.Cutegorias_idCutegorias = cutegorias.idCutegorias 
+        join img_de on img_de.Cursos_idCursos = idCursos
+        join imgs on imgs.idImgs = img_de.Imgs_idImgs
+        ORDER BY RAND()
+        LIMIT 4 
+        ;
+        ";
+        $db = new DB($sqlcomand) or die("erro char Cruso");
         return $db->resultArray;
     }
 

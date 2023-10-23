@@ -15,7 +15,7 @@ if ($_SESSION['id']) {
         $new = new Send();
         $new->UpdateName($_SESSION['id'], $_POST['name']);
         $_SESSION['nome'] = $_POST['name'];
-        header("Location: http://localhost:3000/Logado");
+        header("Location: http://localhost:80/Logado");
     } else {
     }
 
@@ -54,7 +54,7 @@ if ($_SESSION['id']) {
                 }
 
                 echo "A imagem foi enviada com sucesso!";
-                header("Location: http://localhost:3000/Logado");
+                header("Location: http://localhost:80/Logado");
             } else {
                 echo "Erro ao mover o arquivo para o diretório de destino.";
             }
@@ -65,5 +65,5 @@ if ($_SESSION['id']) {
         echo "Erro no upload da imagem. Verifique se você escolheu um arquivo válido.";
     }
 } else {
-        Route::response()->redirect('http://localhost:3000/Logado');
+        Route::response()->redirect('http://localhost:80/Logado');
 }

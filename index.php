@@ -8,13 +8,12 @@
 </head>
 
 <body>
-    <?php
-
-    require "./vendor/autoload.php";
+    <?php  
     
+    require __DIR__."/vendor/autoload.php";  
     use \pecee\SimpleRouter\SimpleRouter;
 
-    require_once 'routes.php';
+    require_once __DIR__.'/routes.php';
 
     SimpleRouter::setDefaultNamespace('\Demo\Controllers');
     SimpleRouter::start();

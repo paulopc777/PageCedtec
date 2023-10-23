@@ -2,17 +2,17 @@
 <html lang="en">
 <?php
 
-if ($_SERVER["REQUEST_URI"] == '/View/Private/Logado.php') {
+if ($_SERVER["REQUEST_URI"] == '/View/Private/ProfLogado.php') {
     require_once('../../Controller/SessionControll/Session.php');
 } else {
     require_once('Controller/SessionControll/Session.php');
 }
-$check = new Sension();
-$result = $check->Verify();
-if ($result === null) {
-    header("Location: http://localhost:80/Login");
-    exit('');
-}
+//$check = new Sension();
+//$result = $check->Verify();
+//if ($result === null) {
+  //  header("Location: http://localhost:80/Login");
+  //  exit('');
+//}
 
 ?>
 

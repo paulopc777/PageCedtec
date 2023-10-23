@@ -21,7 +21,7 @@ if (!empty($_POST['email']) && !empty($_POST['senha']) && !empty($_POST['name'])
 
     $db  = $db->InsertUser($name, $email, $senha);
     
-    header("Location: http://localhost:3000/view/Login.php?erro=Insira email e senha");
+    header("Location: http://localhost:80/view/Login.php?erro=Insira email e senha");
 } else {
     echo "erro";
 }
