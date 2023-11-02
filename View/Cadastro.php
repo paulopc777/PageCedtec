@@ -17,12 +17,12 @@
     session_start();
 
     if (!empty($_SESSION['id'])) {
-        header("Location: http://localhost:3000/Logado");
+        header("Location: http://localhost:80/Logado");
     }
 
     if (!empty($err)) {
         $err  = $erro;
-        require_once("Components/boxErro.php");
+        require_once("Components/box/boxErro.php");
     }
 
     ?>

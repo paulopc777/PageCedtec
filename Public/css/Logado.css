@@ -22,7 +22,7 @@ main {
 }
 
 .fundo-User {
-
+position: relative;
     width: 350px;
     height: 550px;
     border-radius: 50px;
@@ -144,7 +144,7 @@ form {
     width: 325px;
     height: 125px;
     flex-shrink: 0;
-    border-radius: 50px;
+    border-radius: 25px;
     display: flex;
     margin-bottom: 1rem;
 }
@@ -152,7 +152,7 @@ form {
 .Curso-img img {
     width: 125px;
     height: 125px;
-    border-radius: 50px 0 0 50px;
+    border-radius: 25px 0 0 25px;
     transition: 0.5s all ease-in-out;
     object-fit: cover;
 }
@@ -210,4 +210,24 @@ input:focus::placeholder {
     color: rgb(70, 36, 36);
     font-family: Bebas Neue;
     font-size: 1.3rem;
+}
+.div-links{
+    width: 100%;
+    position: absolute;
+    display: flex;
+    justify-content: space-evenly;
+    bottom: 20px;
+
+}
+.deslogar{
+    padding: 1rem;
+    background-color: #bd5477;
+    border-radius:20px;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+.deslogar a {
+    text-transform: uppercase;
+    font-family: 'Courier New', Courier, monospace;
+    text-decoration: none;
+    color: white;
 }

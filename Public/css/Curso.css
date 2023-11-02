@@ -1,16 +1,22 @@
-
-
-main{
+main {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     margin-top: 4rem;
+    height: 100% !important;
+}
+
+.Apresentacao {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 260px;
 }
 
 .Conteudo {
-    width: 300px;
-    height: 260px;
+    width: 280px;
+    height: 150px;
     flex-shrink: 0;
-    border-radius: 50px;
+    border-radius: 25px;
     background: #B4E39E;
     display: flex;
     flex-direction: column;
@@ -31,6 +37,8 @@ main{
     flex-shrink: 0;
     border-radius: 50px;
     background: #01AE46;
+    color: white;
+    font-size: 1.5rem;
 }
 
 .Titulo {
@@ -39,6 +47,12 @@ main{
     flex-shrink: 0;
     border-radius: 50px;
     background: #63855E;
+
+}
+
+.Titulo p {
+    color: white;
+    font-size: 1.5rem;
 }
 
 .descricao {
@@ -52,4 +66,85 @@ main{
 .img img {
     border-radius: 50px;
     max-width: 450px;
+}
+
+.Professor {
+    width: 280px;
+    border-radius: 25px;
+    background: #935066;
+    padding: 0.5rem;
+}
+
+.fotn1 {
+    font-size: 1.4rem;
+    color: white;
+    margin-left: 20px;
+    margin-bottom: 0 !important;
+}
+
+.img-prof {
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    background-color: azure;
+}
+
+.box-Professor {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 20px;
+}
+
+.box-Professor p {
+    margin: 0 !important;
+}
+
+.box-profs {
+    display: flex;
+
+}
+
+section {
+    max-width: 1200px;
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.box-modulos {
+    display: flex;
+    align-items: center;
+    box-shadow: 5px 5px 10px 1px rgb(0, 0, 0, 60%);
+    margin-top: 2.5rem;
+    width: 500px;
+}
+
+.box-modulos p {
+    margin: 0 !important;
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+.text-modulo {
+    width: 100%;
+}
+
+.modulos-check {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #37da78;
+    width: 40px;
+    height: 40px;
+    border-radius: 10%;
+}
+
+.modulos-check p {
+    margin: 0 !important;
+    font-size: 1.4rem;
 }

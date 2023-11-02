@@ -1,17 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Todos so Cursos</title>
     <link rel="stylesheet" href="../Public/css/Home.css">
-    <link rel="stylesheet" href="../Public/css/Curso.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-
 </head>
 
 <body>
@@ -58,54 +56,26 @@
         </div>
     </header>
     <main>
-        <div class="img-curso">
+
+
+        <?php
+        require_once('./Modules/comands.php');
+        $send = new Send();
+        $newResult = $send->charAllCruse();
+        //var_dump($newResult);
+        require_once('./Controller/arrayloop.php');
+        new Arrayloop(4, $newResult);
+        ?>
+
+
+
+        <div div class="flex_card" style="margin-top: 2rem; margin-bottom: 5rem;">
             <?php
-            require_once('View/CursoComp/img.php');
-            ?>
-        </div>
-        <div class="Apresentacao">
-            <div class="Conteudo">
-                <?php
-                require_once('View/CursoComp/TituloDescr.php');
-                //var_dump($result);
-                $texto_corrigido = str_replace(" ", "_", $result[0][5]);
-                echo "<button><a href='/Inscricao/".$result[0][5]."'>Increvase</a></button>"
-                ?>
-            </div>
-            <?php
-            require_once('View/CursoComp/professores.php');
+            require_once("./View/Components/conteiner/cards.php");
             ?>
         </div>
 
-        <div>
-            <div class="toast-container position-fixed bottom-0 end-0 p-3">
-                <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
-                    <div class="toast-header">
-
-                        <strong class="me-auto">Equipe Cursos Cedtec</strong>
-                        <small>Agora</small>
-                        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-                    </div>
-                    <div class="toast-body">
-                        Eia, Que Tal lugar e ter acesso a varios Cursos ? <br>
-                        <a class="link-success" href="/Cadastro">Faça seu Cadastro e de um Level Up!</a>
-                    </div>
-                </div>
-            </div>
-        </div>
     </main>
-    <section>
-
-        <h3 style=" text-align:center; ">Modulos do Curso</h3>
-
-<?php
-    $resultfind = $send -> findCurso($result[0][0]);
-    //var_dump($resultfind);
-
-    new Arrayloop(5,$resultfind);
-?>
-
-    </section>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 <?php
@@ -129,6 +99,5 @@ if (!isset($_SESSION['id'])) {
 }
 
 ?>
-
 
 </html>

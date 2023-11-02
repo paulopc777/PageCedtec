@@ -37,7 +37,7 @@ class Send
     public function charCurso($idUser)
     {
         $sqlcomand = "
-        SELECT imgs.nameImg ,nomeCurso,group_concat(modulos.nomeModulo)'nomeModulo' FROM usuarios 
+        SELECT imgs.nameImg ,nomeCurso,group_concat(modulos.nomeModulo)'nomeModulo',idCursos FROM usuarios 
         join matricula on matricula.Usuarios_idUsuarios = idUsuarios 
         join cursos on matricula.Cursos_idCursos =idCursos
         join modulos on modulos.Cursos_idCursos = idCursos
@@ -115,16 +115,65 @@ class Send
 
         return $db->result;
     }
-
-    public function findCurso($nomeCurso){
+    /**
+     * Ache o Curo pelo nome do mesmo 
+     * @param string $nomeCurso Nome do Curso a pesquisar
+     * @return array array de dados do curso
+     */
+    public function findCurso($nomeCurso)
+    {
         $sqlcomand = "
         SELECT nomeCurso,descricaoCurso,Name,group_concat(nomeModulo),group_concat(descricaoModulo),
-        time_format(sum(duracaoModulo),'%H %i %s') 
+        idCursos
         FROM cursos 
         join cutegorias on cursos.Cutegorias_idCutegorias = cutegorias.idCutegorias 
         join modulos on modulos.Cursos_idCursos = cursos.idCursos where nomeCurso = \"$nomeCurso\";
         ";
         $db = new DB($sqlcomand) or die("Erro send findCurso");
+        return $db->resultArray;
+    }
+    /**
+     * Lista 4 cursos no banco de dados
+     * 
+     */
+    public function ListCurse()
+    {
+        $sqlcomand = "
+        SELECT nomeCurso,descricaoCurso,imgs.nameImg  FROM cursos 
+        join cutegorias on cursos.Cutegorias_idCutegorias = cutegorias.idCutegorias 
+        join img_de on img_de.Cursos_idCursos = idCursos
+        join imgs on imgs.idImgs = img_de.Imgs_idImgs
+        ORDER BY RAND()
+        LIMIT 4 
+        ;
+        ";
+        $db = new DB($sqlcomand) or die("erro char Cruso");
+        return $db->resultArray;
+    }
+
+    public function FindProfCurso($nomeCurso)
+    {
+        $sqlcomand = "
+        select idProfessor,nomeProfessor from professordocurso 
+        join professores on professordocurso.Professores_idProfessor = idProfessor
+        join cursos on idCursos = professordocurso.Cursos_idCursos
+        where cursos.nomeCurso = '" . $nomeCurso . "';
+        ";
+        $db = new DB($sqlcomand) or die("Erro char Professor de Curos");
+        return $db->resultArray;
+    }
+
+    public function charAllCruse()
+    {
+        $sqlcomand = "
+        select nomeCurso,descricaoCurso,group_concat(modulos.descricaoModulo ),imgs.nameImg from cursos 
+        join modulos on modulos.Cursos_idCursos = idCursos
+        join img_de on img_de.Cursos_idCursos = idCursos
+        join imgs on imgs.idImgs = img_de.Imgs_idImgs
+        group by nomeCurso        
+        ;
+        ";
+        $db = new DB($sqlcomand) or die("Erro char all curses");
         return $db->resultArray;
     }
 
@@ -137,8 +186,23 @@ class Send
         $db = new DB($sqlcomand) or die("Erro send Img");
 
         $idImg = $this->charImg($nameImg);
-        $this->ralationImg($chose,$IdUser, $idImg);
+        $this->ralationImg($chose, $IdUser, $idImg);
         return 'ok img';
+    }
+
+
+    public function InsertCruse($idUser,$idCurse){
+
+        $sqlcomand = "
+        INSERT INTO matricula (matricula.Usuarios_idUsuarios,matricula.Cursos_idCursos)
+        value(
+            ".$idUser." ,
+            ".$idCurse."
+        );
+        
+        ";
+        $db = new DB($sqlcomand) or die("Erro send Matricula");
+        return $db->resultArray;
     }
 
     public function charImg($nameImg)
@@ -155,29 +219,47 @@ class Send
             case "user":
                 $sqlcomand = "
             insert into img_de(Usuarios_idUsuarios,Imgs_idImgs)
-            value(".$IdUser.",".$IdImg.");";
-            $db = new DB($sqlcomand) or die("Erro to send Relation img");
-            break;
+            value(" . $IdUser . "," . $IdImg . ");";
+                $db = new DB($sqlcomand) or die("Erro to send Relation img");
+                break;
         }
     }
 
-    public function charImgUser($idUser){
+    public function charImgUser($idUser)
+    {
         $sqlcomand = "  
         SELECT imgs.idImgs,nameImg FROM img_de 
         join imgs on imgs.idImgs = img_de.Imgs_idImgs 
         join usuarios on usuarios.idUsuarios = img_de.Usuarios_idUsuarios 
-        where idUsuarios = ".$idUser.";
+        where idUsuarios = " . $idUser . ";
         ";
         $db = new DB($sqlcomand) or die("Erro renderizar img");
         return $db->resultArray;
     }
 
-    public function updateImgUser($idImg,$nameImg){
+    public function updateImgUser($idImg, $nameImg)
+    {
         $sqlcomand = "UPDATE imgs 
         SET nameImg = \"$nameImg\"
-        WHERE imgs.idImgs =".$idImg." ; ";
+        WHERE imgs.idImgs =" . $idImg . " ; ";
+
+        $db = new DB($sqlcomand) or die("Erro Update Img");
+    }
+
+    public function CharallUser()
+    {
+        $sqlcomand = "Select * from usuarios";
 
         $db = new DB($sqlcomand) or die("Erro Update Img");
 
+        return $db->resultArray;
+    }
+
+    public function SairCurso($idCurse,$idUser){
+        $sqlcomand = "
+        delete from  matricula where Usuarios_idUsuarios = ".$idUser." and Cursos_idCursos =".$idCurse.";
+        ";
+        $db = new DB($sqlcomand) or die("Erro send Sair de Curso");
+        return $db->resultArray;
     }
 }

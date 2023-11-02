@@ -20,11 +20,11 @@
         session_start();
 
         if(!empty($_SESSION['id'])){
-            header("Location: http://localhost:3000/Logado/".session_id());
+            header("Location: /Logado/".session_id());
         }
         if (!empty($erro)) {
             $err  = $erro;
-            require("Components/boxErro.php");
+            require("Components/box/boxErro.php");
         }
 
         ?>

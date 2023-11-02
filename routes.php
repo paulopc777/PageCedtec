@@ -43,9 +43,9 @@ Route::post('/Cadastro', function () {
 //Pagina de Logado
 Route::get('/Logado', function () {
     if ($_SESSION['id']) {
-        header("Location: http://localhost:3000/Logado/" . session_id());
+        header("Location:/Logado/" . session_id());
     } else {
-        header("Location: http://localhost:3000/Login");
+        header("Location: /Login");
     }
 });
 
@@ -54,7 +54,7 @@ Route::get('/Logado/{id}', function ($id) {
     if ($_SESSION['id'] and $id === session_id()) {
         require_once('./View/Private/Logado.php');
     } else {
-        header("Location: http://localhost:3000/Login");
+        header("Location: /Login");
     }
 });
 
@@ -66,15 +66,24 @@ Route::post('/Logado', function (){
 //Curso
 
 Route::get('/Curso', function () {
-    require_once('View/Curso.php');
+    require_once('View/CursoList.php');
 });
 Route::get('/Cursos', function () {
-    require_once('View/Curso.php');
+    require_once('View/CursoList.php');
 });
 
 Route::get('/Curso/{Curse}', function ($curse) {
     require_once('View/Curso.php');
 });
+
+Route::get('/Inscricao/{Curse}', function ($curse) {
+    require_once('./Controller/PostControll/PostCurso.php');
+});
+
+Route::get('/admin', function(){
+    require_once('./View/Private/admin.php');
+});
+
 
 // Finalização de sessao 
 Route::get('/destroy', function () {
@@ -85,14 +94,5 @@ Route::get('/destroy', function () {
         $_SESSION = array();
     } else {
     }
-    Route::response()->redirect('http://localhost:3000/Login');
-});
-
-Route::get('/teste', function () {
-    require_once('./View/session.php');
-});
-
-
-Route::get('/Deshboard' , function (){
-    require_once('./View/Private/dashboard.php');
+    Route::response()->redirect('/home');
 });

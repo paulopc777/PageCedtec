@@ -6,8 +6,7 @@
     - [x] Sistema de Castro
     - [x] Sessoes
     - [x] Paginas Restritas
-    - [ ] Middleware
-    - [ ] Pagina de dashboard
-    - [ ] Pagina de Curso
-    - [ ] Login do Admin
-    - [ ] Pagina Admin
+    - [x] Middleware
+    - [x] Pagina de Curso
+    - [x] Login do Admin
+    - [x] Pagina Admin

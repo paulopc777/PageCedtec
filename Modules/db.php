@@ -21,11 +21,10 @@ class DB
     public function Conect()
     {
         // Função que coneta no bando de dados ou New Mysqli
-        try{
+        try {
 
             $this->dbconect = new mysqli($this->config[0], $this->config[1], $this->config[2], $this->config[3]);
-
-        }catch(Exception $e){
+        } catch (Exception $e) {
             echo "Erro Database Desligada Ligue a Database";
         }
     }
@@ -36,20 +35,19 @@ class DB
      * @comand adiciona o comando usando DB -> comand = SqlComando;
      */
     public function sendComand()
-    {
-            $this->Conect() ;
+    {    
+            $this->Conect();
+        try {
+            $this->result = $this->dbconect->query($this->comand);
 
-            try {
-                $this->result = $this->dbconect->query($this->comand);
-
-                if ($this->result === true) {
-                    $this->resultArray = $this->result;
-                } else {
-                    $this->resultArray = mysqli_fetch_all($this->result);
-                }
-            } catch (Exception $e) {
-                echo 'erro';
-            };
+            if ($this->result === true) {
+                $this->resultArray = $this->result;
+            } else {
+                $this->resultArray = mysqli_fetch_all($this->result);
+            }
+        } catch (Exception $e) {
+            echo 'erro';
+        };
     }
 
     /**
