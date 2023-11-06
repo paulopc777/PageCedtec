@@ -11,6 +11,12 @@ main {
     justify-content: space-around;
     height: 260px;
 }
+.Apresentacao{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 260px;
+}
 
 .Conteudo {
     width: 280px;
@@ -47,9 +53,14 @@ main {
     flex-shrink: 0;
     border-radius: 50px;
     background: #63855E;
+<<<<<<< HEAD
 
 }
 
+=======
+    
+}
+>>>>>>> 9869024a38f6ce40e44facf98fdda36072e499f3
 .Titulo p {
     color: white;
     font-size: 1.5rem;
@@ -74,6 +85,7 @@ main {
     background: #935066;
     padding: 0.5rem;
 }
+<<<<<<< HEAD
 
 .fotn1 {
     font-size: 1.4rem;
@@ -83,18 +95,32 @@ main {
 }
 
 .img-prof {
+=======
+.fotn1{
+    font-size: 1.4rem;
+    color: white;
+    margin-left: 20px;
+    margin-bottom: 0!important;
+}
+.img-prof{
+>>>>>>> 9869024a38f6ce40e44facf98fdda36072e499f3
     width: 30px;
     height: 30px;
     border-radius: 100%;
     background-color: azure;
 }
+<<<<<<< HEAD
 
 .box-Professor {
+=======
+.box-Professor{
+>>>>>>> 9869024a38f6ce40e44facf98fdda36072e499f3
     display: flex;
     align-items: center;
     justify-content: center;
     margin-left: 20px;
 }
+<<<<<<< HEAD
 
 .box-Professor p {
     margin: 0 !important;
@@ -147,4 +173,12 @@ section {
 .modulos-check p {
     margin: 0 !important;
     font-size: 1.4rem;
+=======
+.box-Professor p {
+    margin: 0!important;
+}
+.box-profs{
+    display: flex;
+
+>>>>>>> 9869024a38f6ce40e44facf98fdda36072e499f3
 }

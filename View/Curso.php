@@ -75,6 +75,7 @@
             <?php
             require_once('View/CursoComp/professores.php');
             ?>
+<<<<<<< HEAD
         </div>
 
         <div>
@@ -92,6 +93,8 @@
                     </div>
                 </div>
             </div>
+=======
+>>>>>>> 9869024a38f6ce40e44facf98fdda36072e499f3
         </div>
     </main>
     <section>

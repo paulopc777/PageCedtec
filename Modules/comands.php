@@ -120,8 +120,12 @@ class Send
      * @param string $nomeCurso Nome do Curso a pesquisar
      * @return array array de dados do curso
      */
+<<<<<<< HEAD
     public function findCurso($nomeCurso)
     {
+=======
+    public function findCurso($nomeCurso){
+>>>>>>> 9869024a38f6ce40e44facf98fdda36072e499f3
         $sqlcomand = "
         SELECT nomeCurso,descricaoCurso,Name,group_concat(nomeModulo),group_concat(descricaoModulo),
         idCursos
@@ -133,12 +137,20 @@ class Send
         return $db->resultArray;
     }
     /**
+<<<<<<< HEAD
      * Lista 4 cursos no banco de dados
      * 
      */
     public function ListCurse()
     {
         $sqlcomand = "
+=======
+     * Lsita 4 cursos no banco de dados
+     * 
+     */
+    public function ListCurse(){
+        $sqlcomand ="
+>>>>>>> 9869024a38f6ce40e44facf98fdda36072e499f3
         SELECT nomeCurso,descricaoCurso,imgs.nameImg  FROM cursos 
         join cutegorias on cursos.Cutegorias_idCutegorias = cutegorias.idCutegorias 
         join img_de on img_de.Cursos_idCursos = idCursos
@@ -150,6 +162,7 @@ class Send
         $db = new DB($sqlcomand) or die("erro char Cruso");
         return $db->resultArray;
     }
+<<<<<<< HEAD
 
     public function FindProfCurso($nomeCurso)
     {
@@ -176,6 +189,8 @@ class Send
         $db = new DB($sqlcomand) or die("Erro char all curses");
         return $db->resultArray;
     }
+=======
+>>>>>>> 9869024a38f6ce40e44facf98fdda36072e499f3
 
     public function addImg($chose, $IdUser, $nameImg)
     {

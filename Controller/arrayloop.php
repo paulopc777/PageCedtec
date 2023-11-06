@@ -15,6 +15,7 @@ class Arrayloop
             case 2:
                 $this->repeat($resultArray, "Card");
                 break;
+<<<<<<< HEAD
             case 3:
                 $this->repeat($resultArray, "ListProf");
                 break;
@@ -24,6 +25,8 @@ class Arrayloop
             case 5:
                 $this->repeat($resultArray, "modules");
                 break;
+=======
+>>>>>>> 9869024a38f6ce40e44facf98fdda36072e499f3
         }
     }
     function repeat($resultArray, $func)
@@ -51,6 +54,7 @@ class Arrayloop
     {
         $image = imagecreatefrompng('./Public/img/img-curso-small/' . $resultArray[0]);
 
+<<<<<<< HEAD
         $width = imagesx($image);
         $height = imagesy($image);
         $colorCount = array();
@@ -92,6 +96,16 @@ class Arrayloop
 
         echo "
         <div class='curso-1'  style='background-color:rgb(" . $red . "," . $green . "," . $blue . ");'>
+=======
+        if (strpos($resultArray[0], "Python") !== false) {
+            $color =  "#11162F";
+        } else if (!strpos($resultArray[0], "Java") !== false) {
+            $color =  "#ac1014";
+        }
+        $arra = explode(',', $resultArray[2]);
+        echo "
+        <div class='curso-1' style='background:" . $color . ";'>
+>>>>>>> 9869024a38f6ce40e44facf98fdda36072e499f3
                     <div class='Curso-img'>
                         <a href=''>
                             <img src='/Public/img/img-curso-small/" . $resultArray[0] . "' alt=''>
@@ -112,6 +126,7 @@ class Arrayloop
         $texto = $result[0];
         $texto_corrigido = str_replace(" ", "_", $texto); // Substituir espaços por underscores
         echo "
+<<<<<<< HEAD
         <div class='card' style='width: 10rem; he'>
         <img src='/Public/img/img-curso-small/" . $result[2] . "' class='card-img-top' alt='...'>
             <div class='card-body d-flex flex-column justify-content-center'>
@@ -263,5 +278,15 @@ class Arrayloop
         
         ";
         }
+=======
+        <div class='card' style='width: 10rem;'>
+        <img src='/Public/img/img-curso-small/" . $result[2] . "' class='card-img-top' alt='...'>
+            <div class='card-body'>
+            <h5 class='card-title'>" . $result[0] . "</h5>
+            <p class='card-text'>" . $result[1] . "</p>
+            <a href='/Curso/" .  $texto_corrigido . "' class='btn btn-primary'>Ver mais</a>
+        </div>
+        </div>";
+>>>>>>> 9869024a38f6ce40e44facf98fdda36072e499f3
     }
 }

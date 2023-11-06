@@ -76,6 +76,7 @@ Route::get('/Curso/{Curse}', function ($curse) {
     require_once('View/Curso.php');
 });
 
+<<<<<<< HEAD
 Route::get('/Inscricao/{Curse}', function ($curse) {
     require_once('./Controller/PostControll/PostCurso.php');
 });
@@ -84,6 +85,8 @@ Route::get('/admin', function(){
     require_once('./View/Private/admin.php');
 });
 
+=======
+>>>>>>> 9869024a38f6ce40e44facf98fdda36072e499f3
 
 // Finalização de sessao 
 Route::get('/destroy', function () {
@@ -94,5 +97,9 @@ Route::get('/destroy', function () {
         $_SESSION = array();
     } else {
     }
+<<<<<<< HEAD
     Route::response()->redirect('/home');
+=======
+    Route::response()->redirect('/Login');
+>>>>>>> 9869024a38f6ce40e44facf98fdda36072e499f3
 });

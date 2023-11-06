@@ -29,8 +29,16 @@ if (empty($_POST['email'])) {
             $_SESSION['id'] = $result[0];
             $_SESSION['nome'] = $result[1];
             header("Location: http://localhost:80/Logado/" . session_id());
+<<<<<<< HEAD
         } 
     } else {
         header("Location: http://localhost:80/Login/Email_ou_senha_errados");
+=======
+        } else {
+            header("Location: http://localhost:80/Login/Email_senha_errados");
+        }
+    } else {
+        header("Location: http://localhost:80/Cadastro/Email_não_cadastrado");
+>>>>>>> 9869024a38f6ce40e44facf98fdda36072e499f3
     }
 }
