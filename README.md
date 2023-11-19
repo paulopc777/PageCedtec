@@ -2,9 +2,9 @@
 
 Trabalho do modulo de Gerneciamento de Banco de dados onde aprendemos e praticamos 
 
- - [x] MySql Avançado
- - [X] PHP
- - [x] Conexão com banco de dados pelo Mysqli
+- MySql Avançado
+- PHP
+- Conexão com banco de dados pelo Mysqli
 
  obs:Todas as query feitas em sql para melhor apreveitemento e fixação do conteúdo 
 
